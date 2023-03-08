@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "image-getter"
+version = "0.1.0"
+description = ""
+authors = ["Colin Sheridan <csheridan@willamette.edu>"]
+readme = "README.md"
+packages = [{include = "image_getter"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+boto3 = "^1.26.86"
+path = "^16.6.0"
+requests = "^2.28.2"
+pytest = "^7.2.2"
+argparse = "^1.4.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+process = "image_process:main"
