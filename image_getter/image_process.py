@@ -16,12 +16,12 @@ def main():
 
 def process_images(csv_file):
     s3 = boto3.resource('s3') 
-    s3_bucket_name = "pnca-web-components"
-    base_url = "https://calendarmedia.blob.core.windows.net/assets/"
+    s3_bucket_name = os.environ.get('S3_BUCKET')
+    base_url = os.environ.get('BASE_URL')
     base_extension = ".jpg"
     base_extension_small = "-small.jpg"
-    s3_path = "colindev/originals/"
-    s3_path_small = "colindev/smalls/"
+    s3_path = os.environ.get('S3_PATH_ORIGINAL')
+    s3_path_small = os.environ.get('S3_PATH_SMALL')
     data_folder = Path("./")
     csv_reader = csv.reader(csv_file, delimiter=',')
     line_count = 0
